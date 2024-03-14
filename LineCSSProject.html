@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Project</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #4caab9;
+            position : sticky;
+        }
+
+        ul li {
+            display : inline;
+            float : right;
+        }
+
+            ul li a {
+                display: block;
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                padding: 14px 16px;
+            }
+
+                ul li .active {
+                    background-color: #2b3e84;
+                }
+
+            ul li a:hover {
+                background-color: #3b749e;
+            }
+
+        .image {
+            width: 50%;
+            height: 400px;
+            padding : 10% 25%;
+        }
+
+        .container .btn {
+            background-color: #4caab9;
+            color : #fff;
+            height : 50px;
+            width : 80px;
+            border-radius : 15px;
+        }
+
+            .container .btn:hover {
+                background-color: #3b749e;
+            }
+
+        .Pagefotter {
+            display : flex;
+            justify-content : center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="NavigationBar">
+
+            <ul>
+                <li><a class="active" href="#">Home Page</a></li>
+                <li><a href="#">About As</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About Corse</a></li>
+            </ul>
+
+        </div>
+
+        <img class="image" src="https://th.bing.com/th/id/R.b7c2e508920a1168b94dea8675fa311d?rik=OrKWiP1KjSmTXg&riu=http%3a%2f%2fblog.brakoniecki.pl%2fwp-content%2fuploads%2f2015%2f02%2fcss-logo.png&ehk=fTRhrOcV1pmRkABaHeXyXpLjC4%2bNfbXaiYPz16Ageoc%3d&risl=&pid=ImgRaw&r=0" />
+
+        <div class="Pagefotter">
+            <button class="btn" type="submit">Login</button>
+        </div>
+
+    </div>
+</body>
+</html>
