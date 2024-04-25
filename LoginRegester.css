@@ -47,8 +47,6 @@
         color: #fff;
     }
 
-
-
 .input-box i {
     position: absolute;
     right: 20px;
@@ -88,15 +86,14 @@
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     font-size: 16px;
     color: #333;
-    font-weight: 600;
-    
+    font-weight: 600;   
 }
 
-.container .regesterLink {
-    text-align: center;
-    font-size: 14px;
-    margin: 20px 0 15px;
-}
+    .container .regesterLink {
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0 15px;
+    }
 
 .regesterLink p a {
     color: #fff;

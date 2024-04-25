@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glowing Pluse Search Bar</title>
+    <style>
+        body {
+            background-color: #151515;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            height: 97vh;
+        }
+
+        .searchForm {
+            padding: 30px;
+            background: linear-gradient(#1b1b1b, #111);
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+            .searchForm .searchInput {
+                color: #fff;
+                background-color: #222;
+                background: linear-gradient(#333, #222);
+                border-radius: 5px 0px 0px 5px;
+                height: 40px;
+                width: 240px;
+                border-style: solid;
+                border-color: #3c3c3c;
+                border-width: 1px;
+                text-indent: 5px;
+                outline-color: greenyellow;
+                box-sizing: border-box;
+            }
+
+                .searchForm .searchInput:hover {
+                    background: #292929;
+                    background: linear-gradient(#393939, #292929);
+                    outline: none;
+                }
+
+                .searchForm .searchInput:focus {
+                    animation: glow 800ms ease-out infinite alternate;
+                    outline: none;
+                }
+
+            .searchForm .searchBtn {
+                color: #fff;
+                background: linear-gradient(#333, #222);
+                border-radius: 0px 5px 5px 0px;
+                height: 40px;
+                width: 80px;
+                border-style: solid;
+                border-color: #3c3c3c;
+                border-width: 1px;
+                box-sizing: border-box;
+            }
+
+                .searchForm .searchBtn:hover {
+                    background: #292929;
+                    background: linear-gradient(#393939, #292929);
+                    color: #5f5;
+                    outline: none;
+                }
+
+        @media screen and (max-width: 1290px) {
+            body {
+                height: 100svh;
+            }
+        }
+
+        @media screen and (max-width: 350px) {
+
+            .searchForm {
+                padding: 30px;
+            }
+
+                .searchForm .searchInput {
+                    height: 40px;
+                    width: 180px;
+                }
+
+                .searchForm .searchBtn {
+                    height: 40px;
+                    width: 60px;
+                }
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: #393;
+                box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+            }
+
+            100% {
+                border-color: #6f6;
+                box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="maxHeightDisplay" class="container">
+
+        <div class="searchForm">
+            <form action="">
+                <input class="searchInput" type="search" placeholder="What are you looking for?" />
+                <button class="searchBtn">Search</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
