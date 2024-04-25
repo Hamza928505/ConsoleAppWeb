@@ -23,8 +23,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{0D068791-9E0E-4267-A567-1CAD32A9A532}"
 	ProjectSection(SolutionItems) = preProject
 		DarkMode.html = DarkMode.html
-		DigitaClock.html = DigitaClock.html
 		Drop-Down Menu.html = Drop-Down Menu.html
+		DigitalClock.html = DigitalClock.html
 		fix.html = fix.html
 		GlowingPulseSearchBar.html = GlowingPulseSearchBar.html
 		index.html = index.html
