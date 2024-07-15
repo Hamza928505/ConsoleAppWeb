@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <title>JS Login Page</title>
+    <style>
+
+        body {
+            background-image: linear-gradient(to right, #4258d0, #c74fc0);
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        .page_padding {
+            padding-top: 130px;
+        }
+
+        .element_padding {
+            padding-top: 30px;
+        }
+
+        .input-group-text {
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            padding: 0px 15px;
+
+        }
+
+        .input-group {
+            border-radius: 40px;
+        }
+
+        .form-control {
+            text-indent: 12px;
+            background-color: #eee;
+            border-radius: 40px;
+            padding: 15px 0px;
+        }
+
+        .shadow {
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.25) !important;
+        }
+
+        .btn {
+            border-radius: 40px;
+        }
+
+        .radius {
+            border-radius: 40px;
+        }
+
+        .margin {
+            margin: 0px -15%;
+        }
+
+        .bg-white {
+            padding: 60px;
+            width: 80%;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+
+
+
+
+
+
+        @media screen and (min-width: 1400px) { /* col-xxl- */
+
+        }
+
+        @media screen and (min-width: 1200px) and (max-width: 1400px) { /* col-xl- */
+            .form-control {
+                font-size: 13px;
+            }
+
+            .form-check-label {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1200px) { /* col-lg- */
+            .form-control {
+                font-size: 12px;
+            }
+
+            .form-check-label {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 992px) { /* col-md- */
+            .form-control {
+                font-size: 12px;
+            }
+
+            .form-check-label {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px) { /* col-sm- */
+            .form-control {
+                font-size: 11px;
+            }
+
+            .form-check-label {
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width: 576px) { /* col- */
+            .form-control {
+                font-size: 12px;
+            }
+
+            .form-check-label {
+                font-size: 11px;
+            }
+        }
+     
+    </style>
+</head>
+<body>
+
+    <div class="page_padding"></div>
+
+    <div class="container-fluid">
+        <div class="row bg-white shadow">
+
+            <form action="JS Age.html" class="col-xxl-6 offset-xxl-6 col-xl-6 offset-xl-6 col-lg-6 offset-lg-6 col-md-7 offset-md-5 col-sm-7 offset-sm-5 col-7 offset-5 m-auto" name="Form" onsubmit="return validateForm()">
+
+                <div class="input-group shadow">
+                    <span class="input-group-text"><i class="fa-solid fa-user profile_icon"></i></span>
+                    <input type="text" class="form-control" placeholder="User First Name" autocomplete="off" name="UserFN" notrequired id="UserFN" />
+                    <input type="text" class="form-control" placeholder="User Last Name" autocomplete="off" name="UserLN" notrequired id="UserLN" />
+                </div>
+
+                <div class="element_padding"></div>
+
+                <div class="input-group shadow">
+                    <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                    <input type="text" class="form-control" placeholder="Country" autocomplete="off" name="Country" notrequired id="Country" />
+                    <input type="text" class="form-control" placeholder="City" autocomplete="off" name="City" notrequired id="City" />
+                </div>
+
+                <div class="element_padding"></div>
+
+                <div class="d-flex row">
+                    <div class="form-check col-xxl-6 offset-xxl-6 col-xl-6 offset-xl-6 col-lg-6 offset-lg-6 col-md-7 offset-md-5 col-sm-7 offset-sm-5 col-7 offset-5 m-auto">
+                        <input type="checkbox" class="shadow form-check-input" id="disableLN" name="disableLastName" onchange="DisableLastName()" />
+                        <label class="form-check-label">Disable Last Name</label>
+                    </div>
+
+                    <div class="form-check col-xxl-6 offset-xxl-6 col-xl-6 offset-xl-6 col-lg-6 offset-lg-6 col-md-7 offset-md-5 col-sm-7 offset-sm-5 col-7 offset-5 margin">
+                        <input type="checkbox" class="shadow form-check-input" id="disableLocation" name="disableLastName" onchange="Disablocation()"/>
+                        <label class="form-check-label">Location</label>
+
+                    </div>
+                </div>
+
+                <div class="element_padding"></div>
+
+                <div class="d-grid shadow radius">
+                    <button type="submit" class="btn btn-primary">Submti</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let onclickLN = 0;
+        let onclickLocation = 0;
+
+        function validateForm() {
+            let FN = document.forms["Form"]["UserFN"].value;
+            let LN = document.forms["Form"]["UserLN"].value;
+            let CON = document.forms["Form"]["Country"].value;
+            let CIT = document.forms["Form"]["City"].value;
+
+            if ((onclickLocation % 2 != 0 && onclickLN % 2 != 0)) {
+                if (FN == "") {
+                    Swal.fire({
+                        title: 'Wrong!',
+                        text: 'Enter Your Information.',
+                        icon: 'error',
+                        confirmButtonText: 'Okay'
+                    });
+                    return false;
+                }
+            }
+            else if (onclickLN % 2 != 0) {
+                if (FN == "" || CON == "" || CIT == "") {
+                    Swal.fire({
+                        title: 'Wrong!',
+                        text: 'Enter Your Information.',
+                        icon: 'error',
+                        confirmButtonText: 'Okay'
+                    });
+                    return false;
+                }
+            } else if (onclickLocation % 2) {
+                if (FN == "" || LN == "") {
+                    Swal.fire({
+                        title: 'Wrong!',
+                        text: 'Enter Your Information.',
+                        icon: 'error',
+                        confirmButtonText: 'Okay'
+                    });
+                    return false;
+                }
+            }
+            else if (FN == "" || LN == "" || CON == "" || CIT == "") {
+                Swal.fire({
+                    title: 'Wrong!',
+                    text: 'Enter Your Information.',
+                    icon: 'error',
+                    confirmButtonText: 'Okay'
+                });
+                return false;
+            }
+
+        }
+
+        function DisableLastName() {
+            let FirstNameInput = document.getElementById('UserFN');
+            let lastNameInput = document.getElementById('UserLN');
+            let disableCheckbox = document.getElementById('disableLN');
+
+            lastNameInput.disabled = disableCheckbox.checked;
+
+            FirstNameInput = document.getElementById('UserFN').style.borderBottomRightRadius = "40px";
+            FirstNameInput = document.getElementById('UserFN').style.borderTopRightRadius = "40px";
+
+            if (onclickLN % 2 == 0) {
+                lastNameInput = document.getElementById('UserLN').style.display = "none";
+            }
+            else {
+                FirstNameInput = document.getElementById('UserFN').style.borderBottomRightRadius = "0px";
+                FirstNameInput = document.getElementById('UserFN').style.borderTopRightRadius = "0px";
+
+                lastNameInput = document.getElementById('UserLN').style.display = "block";
+            }
+
+            let LN = document.forms["Form"]["UserLN"].value = "";
+
+            onclickLN++;
+        }
+
+        function Disablocation() {
+            let CountryInput = document.getElementById('Country');
+            let CityInput = document.getElementById('City');
+            let disableCheckbox = document.getElementById('disableLocation');
+
+            CountryInput.disabled = disableCheckbox.checked;
+            CityInput.disabled = disableCheckbox.checked;
+
+            let CON = document.forms["Form"]["Country"].value = "";
+            let CIT = document.forms["Form"]["City"].value = "";
+
+            onclickLocation++;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <title>JS Login Page</title>
+    <style>
+
+        body {
+            background-image: linear-gradient(to right, #4258d0, #c74fc0);
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        .page_padding {
+            padding-top: 130px;
+        }
+
+        .element_padding {
+            padding-top: 30px;
+        }
+
+        .profile {
+            background-color: white;
+            width: 140px;
+            height: 140px;
+        }
+
+        .profile_icon {
+            font-size: 80px;
+            position: absolute;
+            left: 26.5%;
+            top: 22px;
+        }
+
+        .input-group-text {
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            padding: 0px 15px;
+        }
+
+        .form-control {
+            text-indent: 12px;
+            background-color: #eee;
+            border-radius: 40px;
+            padding: 15px 0px;
+        }
+
+        .btn {
+            border-radius: 40px;
+        }
+
+        .shadow {
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.25) !important;
+        }
+
+        .row {
+            padding: 60px;
+            width: 80%;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+
+
+
+
+
+
+
+
+        @media screen and (min-width: 1400px) { /* col-xxl- */
+
+        }
+
+        @media screen and (min-width: 1200px) and (max-width: 1400px) { /* col-xl- */
+
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1200px) { /* col-lg- */
+
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 992px) { /* col-md- */
+            .form-control {
+                font-size: 12px;
+            }
+
+            .form-check-label {
+                font-size: 12px;
+            }
+
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px) { /* col-sm- */
+            .form-control {
+                font-size: 11px;
+            }
+
+            .form-check-label {
+                font-size: 11px;
+            }
+
+            .page_padding {
+                padding-top: 80px;
+            }
+        }
+
+        @media screen and (max-width: 576px) { /* col- */
+            .form-control {
+                font-size: 11px;
+            }
+
+            .form-check-label {
+                font-size: 11px;
+            }
+
+            .page_padding {
+                padding-top: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page_padding"></div>
+
+    <div class="container-fluid">
+
+        <div class="row bg-white shadow">
+
+                <div class="col-xxl-3 offset-xxl-3 col-xl-3 offset-xl-3 col-lg-3 offset-lg-3 col-md-2 offset-md-2 m-auto">
+
+                    <div class="profile rounded-circle text-center position-relative shadow m-auto">
+                        <i class="fa-solid fa-user profile_icon"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-6 offset-md-2 col-sm-10 offset-sm-2 col-10 offset-2 m-auto">
+
+                    <form action="JS form.html" name="Form" onsubmit="return validateForm()" >
+
+                        <h1 class="text-center">User Login</h1>
+
+                        <div class="element_padding"></div>
+
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-envelope" style="color: #000000;"></i></span>
+                            <input type="text" class="form-control shadow" placeholder="Enter Your Email" autocomplete="off" name="UserEmail" notrequired />
+                        </div>
+
+                        <div class="element_padding"></div>
+
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-lock" style="color: #000000;"></i></span>
+                            <input type="password" class="form-control shadow" placeholder="**********" autocomplete="off" name="UserPassword" notrequired />
+                        </div>
+
+                        <div class="element_padding"></div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary shadow">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function validateForm() {
+            let userE = document.forms["Form"]["UserEmail"].value;
+            let userP = document.forms["Form"]["UserPassword"].value;
+
+            if (userE == "" || userP == "") {
+                Swal.fire({
+                    title: 'Wrong!',
+                    text: 'Enter Your Email and Password.',
+                    icon: 'error',
+                    confirmButtonText: 'Okay'
+                });
+                return false;
+            }
+            else if (userE.search("@") == -1) {
+                Swal.fire({
+                    title: "Worng!",
+                    text: "Your email or password is wrong",
+                    icon: 'error',
+                    confirmButtonText: "okay"
+                });
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>
